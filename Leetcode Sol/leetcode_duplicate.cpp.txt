@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        vector<int>v;
+        v=nums;
+        nums.clear();
+        nums.push_back(v[0]);
+        for(int i=1;i<v.size();i++)
+        {
+
+                if(v[i-1]==v[i])
+                {
+                    continue;
+                }
+                else 
+                {
+                    nums.push_back(v[i]);
+                }
+
+        }
+        
+        return nums.size();
+    }
+};
