@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int strStr(string h, string n) {
+        int ans=1;
+        for(int i=0;i<h.size();i++)
+        {
+            if(h[i]==n[0])
+            {
+                int k=i+1;
+                int sz=-1;
+                for(int j=1;j<n.size();j++)
+                {
+                        if(h[k]!=n[j])
+                        {
+                            
+                            sz=0;
+                            break;
+                        }
+                        else{
+                            k++;
+                            
+                        }
+                       
+
+                }
+                if(sz==-1) return i;
+            }
+        }
+        return -1;
+
+    }
+};

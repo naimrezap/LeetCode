@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int t) {
+        int l=0;
+        int h=nums.size();
+        h--;
+        int m=l+(h-l)/2;
+        int ans=-1;
+        while(l<=h)
+        {
+            if(nums[m]==t) 
+            {
+                ans= m;
+                break;
+            }
+           else  if(nums[m]>t)
+            {
+                h=m-1;
+                m=l+(h-l)/2;
+            }
+            else{
+                l=m+1;
+                m=l+(h-l)/2;
+            }
+            
+
+        }
+        if(ans==-1) return m;
+        else
+        return ans;
+    }
+};
